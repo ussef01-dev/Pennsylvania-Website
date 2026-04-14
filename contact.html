@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="background">
+        <header>
+            <h1>Contact</h1>
+            <img id="flag" src="images/Flag_of_Pennsylvania.svg" alt="Flag of Pennsylvania">
+        </header>
+
+        <div class="nav">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="harrisburg.html">Harrisburg</a>
+                <a href="philadelphia.html">Philadelphia</a>
+                <a href="pittsburgh.html">Pittsburgh</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+
+        <div class="container">
+            <section class="content">
+                <h2>Contact Us</h2>
+                <p>
+                    Use the form below to send a question about Pennsylvania and its cities.
+                </p>
+
+                <form class="contact-form">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name">
+
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name">
+
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email">
+
+                    <label for="confirm-email">Confirm Email Address</label>
+                    <input type="email" id="confirm-email" name="confirm-email">
+
+                    <label for="question">Question</label>
+                    <textarea id="question" name="question" rows="6"></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+
+            <aside class="quick-facts">
+                <h2>Contact Information</h2>
+                <ul>
+                    <li>This form allows visitors to ask questions about the website.</li>
+                    <li>Please enter your email address carefully.</li>
+                    <li>You can explore the city pages before sending your question.</li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+    <script>
+        const form = document.querySelector(".contact-form");
+
+        form.addEventListener("submit", function (event) {
+            const email = document.getElementById("email").value;
+            const confirmEmail = document.getElementById("confirm-email").value;
+
+            if (email !== confirmEmail) {
+                event.preventDefault();
+                alert("Email addresses do not match.");
+            }
+        });
+    </script>
+</body>
+
+</html>
